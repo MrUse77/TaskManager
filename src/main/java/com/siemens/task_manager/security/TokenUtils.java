@@ -4,7 +4,7 @@
  */
 package com.siemens.task_manager.security;
 
-import java.util.logging.Logger;
+import com.siemens.task_manager.models.usuarios;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 
@@ -60,7 +60,7 @@ public class TokenUtils {
         return extractExpiration(token).before(new Date());
     }
 
-        public Boolean validateToken(String token, SecurityUser userDetails) {
+        public Boolean validateToken(String token, usuarios userDetails) {
         try{
       final String username = extractUsername(token);
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));

@@ -9,7 +9,7 @@ import com.siemens.task_manager.models.usuarios;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface InterfazUsuario extends MongoRepository<usuarios, ObjectId> {
+public interface InterfazUsuario extends MongoRepository<usuarios, String> {
     public usuarios findByEmailOrNumInt(String email, String numInt);
     Optional<usuarios> findOneByEmail(String email);
 }
